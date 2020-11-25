@@ -403,8 +403,29 @@ portal:
   #    memory: 256Mi
   #    cpu: 100m
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
 
@@ -423,8 +444,29 @@ core:
   #    memory: 256Mi
   #    cpu: 100m
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
   # Secret is used when core server communicates with other components.
@@ -456,8 +498,29 @@ jobservice:
   #     memory: 256Mi
   #     cpu: 100m
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
   # Secret is used when job service communicates with other components.
@@ -487,8 +550,29 @@ registry:
     #    cpu: 100m
   replicas: 1
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
   # Secret is used to secure the upload state from client
@@ -533,8 +617,29 @@ chartmuseum:
   #    memory: 256Mi
   #    cpu: 100m
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
 
@@ -563,8 +668,29 @@ clair:
   # disable the updaters
   updatersInterval: 12
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
 
@@ -620,8 +746,29 @@ trivy:
       cpu: 1
       memory: 1Gi
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
 
@@ -650,8 +797,29 @@ notary:
     #    memory: 256Mi
     #    cpu: 100m
   nodeSelector: {}
-  tolerations: []
-  affinity: {}
+  tolerations:
+  - key: "spotInstance"
+    operator: "Equal"
+    value: "true"
+    effect: "PreferNoSchedule"
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: lifecycle
+            operator: In
+            values:
+            - EC2Spot
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: intent
+            operator: In
+            values:
+            - apps
+            - control-apps
   ## Additional deployment annotations
   podAnnotations: {}
   # Fill the name of a kubernetes secret if you want to use your own
@@ -679,8 +847,29 @@ database:
     #    memory: 256Mi
     #    cpu: 100m
     nodeSelector: {}
-    tolerations: []
-    affinity: {}
+    tolerations:
+    - key: "spotInstance"
+      operator: "Equal"
+      value: "true"
+      effect: "PreferNoSchedule"
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: lifecycle
+              operator: In
+              values:
+              - EC2Spot
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: intent
+              operator: In
+              values:
+              - apps
+              - control-apps
   external:
     host: "192.168.0.1"
     port: "5432"
@@ -723,8 +912,29 @@ redis:
     #    memory: 256Mi
     #    cpu: 100m
     nodeSelector: {}
-    tolerations: []
-    affinity: {}
+    tolerations:
+    - key: "spotInstance"
+      operator: "Equal"
+      value: "true"
+      effect: "PreferNoSchedule"
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+            - key: lifecycle
+              operator: In
+              values:
+              - EC2Spot
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: intent
+              operator: In
+              values:
+              - apps
+              - control-apps
   external:
     # support redis, redis+sentinel
     # addr for redis: <host_redis>:<port_redis>
