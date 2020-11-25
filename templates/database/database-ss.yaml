@@ -35,30 +35,12 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      initContainers:
-      - args: ["-c", "chmod 0700 /var/lib/postgresql/data/pgdata"]
-        command:
-        - ["/bin/sh"]
-        image: {{ .Values.database.internal.image.repository }}:{{ .Values.database.internal.image.tag }}
-        imagePullPolicy: {{ .Values.imagePullPolicy }}
-        name: database-permision
-        resources:
-          limits:
-            cpu: 150m
-            memory: 75M
-          requests:
-            cpu: 100m
-            memory: 50M
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        volumeMounts:
-        - name: database-data
-          mountPath: /var/lib/postgresql/data
-          subPath: {{ $database.subPath }}
       containers:
       - name: database
         image: {{ .Values.database.internal.image.repository }}:{{ .Values.database.internal.image.tag }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
+        command: ["/bin/sh"]
+        args: ["-c", "chmod 0700 /var/lib/postgresql/data/pgdata"]
         livenessProbe:
           exec:
             command:
