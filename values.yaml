@@ -398,7 +398,7 @@ portal:
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   replicas: 1
-   resources:
+  resources:
     requests:
       memory: 256Mi
       cpu: 100m
@@ -439,7 +439,7 @@ core:
   ## Startup probe values
   startupProbe:
     initialDelaySeconds: 10
-   resources:
+  resources:
     requests:
       memory: 256Mi
       cpu: 100m
@@ -493,10 +493,10 @@ jobservice:
   maxJobWorkers: 10
   # The logger for jobs: "file", "database" or "stdout"
   jobLogger: file
-   resources:
-     requests:
-       memory: 256Mi
-       cpu: 100m
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
   nodeSelector: {}
   tolerations:
   - key: "spotInstance"
@@ -535,7 +535,7 @@ registry:
     image:
       repository: goharbor/registry-photon
       tag: dev
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -544,7 +544,7 @@ registry:
       repository: goharbor/harbor-registryctl
       tag: dev
 
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -651,7 +651,7 @@ clair:
     image:
       repository: goharbor/clair-photon
       tag: dev
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -659,7 +659,7 @@ clair:
     image:
       repository: goharbor/clair-adapter-photon
       tag: dev
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -842,7 +842,7 @@ database:
       tag: dev
     # The initial superuser password for internal database
     password: "changeit"
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -907,7 +907,7 @@ redis:
     image:
       repository: goharbor/redis-photon
       tag: dev
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
