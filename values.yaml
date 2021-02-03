@@ -46,7 +46,7 @@ expose:
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "0"
       kubernetes.io/ingress.class: eks-tyc-ingress-nginx
-      cert-manager.io/cluster-issuer: eks-tyc-cert-manager
+      cert-manager.io/cluster-issuer: cert-manager-infraapps
   clusterIP:
     # The name of ClusterIP service
     name: harbor
