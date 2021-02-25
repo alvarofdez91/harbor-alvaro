@@ -400,7 +400,7 @@ portal:
   replicas: 1
   resources:
     requests:
-      memory: 256Mi
+      memory: 512Mi
       cpu: 100m
     limits:
       cpu: 200m
@@ -444,7 +444,7 @@ core:
     initialDelaySeconds: 10
   resources:
     requests:
-      memory: 256Mi
+      memory: 512Mi
       cpu: 100m
     limits:
       cpu: 200m
@@ -546,7 +546,7 @@ registry:
       tag: dev
     resources:
       requests:
-        memory: 256Mi
+        memory: 512Mi
         cpu: 100m
       limits:
         cpu: 200m
@@ -558,7 +558,7 @@ registry:
 
     resources:
       requests:
-        memory: 256Mi
+        memory: 512Mi
         cpu: 100m
       limits:
         cpu: 200m
@@ -865,7 +865,7 @@ database:
     password: "changeit"
     resources:
       requests:
-        memory: 256Mi
+        memory: 512Mi
         cpu: 100m
       limits:
         cpu: 200m
@@ -933,7 +933,7 @@ redis:
       tag: dev
     resources:
       requests:
-        memory: 256Mi
+        memory: 512Mi
         cpu: 100m
       limits:
         cpu: 200m
