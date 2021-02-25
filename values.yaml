@@ -396,7 +396,7 @@ nginx:
 portal:
   image:
     repository: goharbor/harbor-portal
-    tag: dev
+    tag: v2.2.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   replicas: 1
