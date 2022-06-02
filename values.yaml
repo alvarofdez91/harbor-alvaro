@@ -437,7 +437,7 @@ portal:
   automountServiceAccountToken: false
   replicas: 1
   revisionHistoryLimit: 10
-   resources:
+  resources:
     requests:
       memory: 256Mi
       cpu: 100m
@@ -466,7 +466,7 @@ core:
   startupProbe:
     enabled: true
     initialDelaySeconds: 10
-   resources:
+  resources:
     requests:
       memory: 256Mi
       cpu: 100m
@@ -517,7 +517,7 @@ jobservice:
   # The jobLogger sweeper duration (ignored if `jobLogger` is `stdout`)
   loggerSweeperDuration: 14 #days
 
-   resources:
+  resources:
      requests:
        memory: 256Mi
        cpu: 100m
@@ -545,7 +545,7 @@ registry:
     image:
       repository: goharbor/registry-photon
       tag: dev
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -557,7 +557,7 @@ registry:
       repository: goharbor/harbor-registryctl
       tag: dev
 
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -772,7 +772,7 @@ database:
     # More details see:
     # https://github.com/goharbor/harbor/issues/15034
     shmSizeLimit: 512Mi
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
@@ -833,7 +833,7 @@ redis:
     image:
       repository: goharbor/redis-photon
       tag: dev
-     resources:
+    resources:
       requests:
         memory: 256Mi
         cpu: 100m
