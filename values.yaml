@@ -470,7 +470,7 @@ core:
     requests:
       memory: 256Mi
       cpu: 100m
-     limits:
+    limits:
       cpu: 200m
       memory: 512Mi     
   nodeSelector: {}
@@ -518,10 +518,10 @@ jobservice:
   loggerSweeperDuration: 14 #days
 
   resources:
-     requests:
-       memory: 256Mi
-       cpu: 100m
-      limits:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
       cpu: 200m
       memory: 512Mi     
   nodeSelector: {}
@@ -550,8 +550,8 @@ registry:
         memory: 256Mi
         cpu: 100m
       limits:
-      cpu: 200m
-      memory: 512Mi      
+        cpu: 200m
+        memory: 512Mi      
   controller:
     image:
       repository: goharbor/harbor-registryctl
@@ -562,8 +562,8 @@ registry:
         memory: 256Mi
         cpu: 100m
       limits:
-      cpu: 200m
-      memory: 512Mi      
+        cpu: 200m
+        memory: 512Mi      
   replicas: 1
   revisionHistoryLimit: 10
   nodeSelector: {}
